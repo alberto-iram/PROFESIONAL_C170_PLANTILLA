@@ -1,47 +1,47 @@
 AFRAME.registerComponent("markerhandler", {
   init: async function () {
 
-    //get the dishes collection from firestore database
+    //Toma la colección de platillos desde la base de datos Firebase.
     var dishes = await this.getDishes();
 
-    //markerFound event
+    //Evento markerFound.
     this.el.addEventListener("markerFound", () => {
       var markerId = this.el.id;      
       this.handleMarkerFound(dishes, markerId);
     });
 
-    //markerLost event
+    //Evento markerLost.
     this.el.addEventListener("markerLost", () => {
       this.handleMarkerLost();
     });
 
   },
   handleMarkerFound: function (dishes, markerId) {
-    // Changing button div visibility
+    // Cambiar la visibilidad del botón div.
     var buttonDiv = document.getElementById("button-div");
     buttonDiv.style.display = "flex";
 
     var ratingButton = document.getElementById("rating-button");
     var orderButtton = document.getElementById("order-button");
 
-    // Handling Click Events
+    // Usar eventos de clic.
     ratingButton.addEventListener("click", function () {
       swal({
         icon: "warning",
-        title: "Rate Dish",
-        text: "Work In Progress"
+        title: "Calificar platillo",
+        text: "Procesando calificación"
       });
     });
 
     orderButtton.addEventListener("click", () => {
       swal({
         icon: "https://i.imgur.com/4NZ6uLY.jpg",
-        title: "Thanks For Order !",
-        text: "Your order will serve soon on your table!"
+        title: "¡Gracias por tu orden!",
+        text: "¡Recibirás tu orden pronto!"
       });
     });
 
-    // Changing Model scale to initial scale
+    // Cambiar el tamaño del modelo a su escala incial.
     var dish = dishes.filter(dish => dish.id === markerId)[0];
 
     var model = document.querySelector(`#model-${dish.id}`);
@@ -51,11 +51,11 @@ AFRAME.registerComponent("markerhandler", {
   },
 
   handleMarkerLost: function () {
-    // Changing button div visibility
+    // Cambiar la visibilidad del botón div.
     var buttonDiv = document.getElementById("button-div");
     buttonDiv.style.display = "none";
   },
-  //get the dishes collection from firestore database
+  //Tomar la colección de platillos desde la abse de datos Firebase.
   getDishes: async function () {
     return await firebase
       .firestore()
