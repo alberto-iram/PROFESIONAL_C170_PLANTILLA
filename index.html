@@ -2,9 +2,9 @@
 <html>
 
 <head>
-  <title>Menu Card</title>
+  <title>Menú</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-  <!-- We import arjs version without NFT but with marker + location based support -->
+  <!-- Importamos la versión arjs sin NFT pero con el soporte de marcador + ubicación -->
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
@@ -16,12 +16,12 @@
   <!-- Sweetalert -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-  <!-- The core Firebase JS SDK is always required and must be listed first 
+  <!-- El núcleo JS SDK de Firebase siempre es requerido y debe listarse primero.
 
 
 
 
-    REPLACE THE COMMENT WITH FIREBASE DATABASE CONFIG.
+    REEMPLAZAR EL COMENTARIO CON LA CONFIGURACIÓN DE LA BASE DE DATOS FIREBASE.
 
 
 
@@ -30,10 +30,10 @@
   -->
  
 
-  <!-- Local StyleSheet -->
+  <!-- StyleSheet local -->
   <link href="./style.css" rel="stylesheet" />
 
-  <!--Js Files-->
+  <!-- Archivos JS -->
   <script src="./js/markerHandler.js"></script>
   <script src="./js/addMarkers.js"></script>
   <script src="./js/addButtons.js"></script>
@@ -45,7 +45,7 @@
       sourceWidth:1280; sourceHeight:960; 
       displayWidth: 1280; displayHeight: 960; 
       debugUIEnabled: false;" gesture-detector create-markers create-buttons>
-    <!-- Camera -->
+    <!-- Cámara -->
     <a-entity camera></a-entity>
 
   </a-scene>
