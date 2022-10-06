@@ -55,7 +55,7 @@ AFRAME.registerComponent("markerhandler", {
     var buttonDiv = document.getElementById("button-div");
     buttonDiv.style.display = "none";
   },
-  //Tomar la colección de platillos desde la abse de datos Firebase.
+  //Tomar la colección de platillos desde la base de datos Firebase.
   getDishes: async function () {
     return await firebase
       .firestore()
